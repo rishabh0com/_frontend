@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MInI-CaLcuLator</title>
+    <style>
+        #main{
+            border: 2px solid red;
+            width: 50%;
+            height: 200px;
+            margin: auto;
+            margin-top: 100px;
+            
+        }
+        #main>div{
+            max-width: 100%;
+            height: 50%;
+            margin: auto;
+            display:flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="main">
+        
+        <div>
+            <input type="text" id="inp1"  placeholder="enter 1st number">
+            <input type="text" id="inp2"  placeholder="enter 2st number">
+        </div>
+        <div>
+            <button onclick="add()">Add</button>
+            <button onclick="subs()">Substract</button>
+            <button onclick="mul()">Multiply</button>
+            <button onclick="div()">Division</button>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+<script>
+    let in1 = document.getElementById("inp1");
+    let in2 = document.getElementById("inp2");
+
+    let add = () =>{
+        let n1 = in1.value;
+        let n2 = in2.value;
+        alert(+n1 + +n2);
+    }
+
+    let subs = () =>{
+        let n1 = in1.value;
+        let n2 = in2.value;
+         alert(+n1 - +n2);
+    }
+
+    let mul = () =>{
+        let n1 = in1.value;
+        let n2 = in2.value;
+        alert(+n1 * +n2);
+    }
+
+    let div = () =>{
+        let n1 = in1.value;
+        let n2 = in2.value;
+        alert(+n1 / +n2);
+    }
+
+</script>
