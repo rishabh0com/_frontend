@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIM</title>
+    <style>
+        h2{
+            font-weight: 100;
+        }
+        #dis_bmi{
+            color: rebeccapurple;
+        }
+        #dis_res{
+            color: teal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check your BIM</h1>
+    <h2>Enter your weight and height below to check your BMI result</h2>
+    <h2>Put your weight in here (KG)</h2>
+    <input type="text" id="in1">
+    <br>
+    <h2>And your height in here (M)</h2>
+    <input type="text" id="in2">
+    <br>
+    <button>Calculate BMI</button>
+    <br>
+    <h2>Your BMI is <span id="dis_bmi">__</span> which means you are <span id="dis_res">__</span></h2>
+    <hr>
+</body>
+</html>
+<script>
+    // weight / (height * height)
+    let weight = document.querySelector("#in1");
+    let height = document.querySelector("#in2");
+    let button = document.querySelector("button");
+    let bmi = document.querySelector("#dis_bmi");
+    let result = document.querySelector("#dis_res");
+    let bag = null;
+
+    button.addEventListener("click",function(){
+       bag = +weight.value / (+height.value * +height.value)
+       bmi.innerText = bag;
+       if(bag <= 18.4){
+        result.innerText = "UnderWeigth";
+       }
+       else if(bag >= 18.5 && bag <= 24.9){
+        result.innerText = "Normal Weight";
+       }
+       else if(bag >= 25 && bag <= 29.9){
+        result.innerText = "Overweight";
+       }
+       else if(bag >= 30){
+        result.innerText = "Obeses";
+       }
+    })
+</script>
