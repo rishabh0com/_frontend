@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+        body{
+            
+            background-color: #eff9f0;
+        }
+        #container{
+            border: 0px solid red;
+            width: 30%;
+            margin: auto;
+            margin-top: 50px;
+            background-color: #22223b;
+            border-radius: 9px;
+        }
+        #display{
+           width: 100%;
+           height: 70px;
+           border-radius: 10px;
+           border: 2px solid ;
+           font-size: 1.9rem;
+           font-weight: bolder;
+           text-align: right;
+           padding-right: 20px;
+           background-color: #9db4c0;
+           color: white;
+           border: 2px solid rgb(0, 0, 0);
+
+        }
+        #button{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+        }
+        #button > button{
+            border-radius: 50px;
+            height: 90px;
+            background-color:#5c677d;
+            font-size: xx-large;
+            box-shadow: rgba(152, 152, 164, 0.774) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            
+        }
+        .Ac{
+            color: yellow;
+        }
+        .but{
+            color: white;
+        }
+        h1{
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: xx-large;
+            margin-top: 30px;
+            margin-bottom: 0px;
+            font-weight: bolder;
+            color: #997b66;
+
+        }
+        /* for smartphone */
+         @media all and (min-width:0px) and (max-width:720px){
+            #container{
+                width: 90%;
+            }
+
+         }
+         #equal{
+            color: rgb(255, 200, 0);
+         }
+
+    </style>
+</head>
+<body>
+    <h1>Calculate Me !</h1>
+  <div id="container">
+    
+        <input id="display" type="text" name="display">
+        <div id="button">
+            <button  class="but" >9</button>
+            <button  class="Ac">AC</button>
+            <button  class="operator" >/</button>
+            
+            <button  class="operator" >+</button>
+            
+            <button  class="but" >8</button>
+            <button  class="but" >7</button>
+            <button  class="but" >6</button>
+            <button  class="operator">-</button>
+            <button  class="but" >5</button>
+            <button  class="but" >4</button>
+            <button  class="but" >3</button>
+            <button  class="operator" >x</button>
+            <button  class="but" >2</button>
+            <button  class="but" >1</button>
+            <button  class="but" >0</button>
+            <button  id="equal">=</button>
+        </div>
+    
+  </div>
+</body>
+</html>
+<script>
+    //catch the elements :
+    let display = document.querySelector("#display")
+    let button = document.querySelectorAll("#button > .but");
+    let equal = document.getElementById("equal");
+    let ope = document.querySelectorAll(".operator");
+    let ac = document.querySelector(".Ac");
+
+    //add event to operators button
+    let bag3 = "";
+    for(let i = 0; i < ope.length; i++){
+        ope[i].addEventListener("click",function(){
+            
+            bag3 = ope[i].innerText;
+            is = false;
+            //console.log(bag3)
+        })
+    }
+    
+    //add event on number buttons
+    let bag1 = "";
+    let bag2 = "";
+    let is = true;
+    button.forEach((e) => {
+        e.addEventListener("click",function (){
+            
+         if(is == true){
+            bag1 += e.innerText;
+            //console.log(e.innerText)
+            display.value = bag1;
+         }
+         if(is == false){
+            bag2 += e.innerText;
+            //console.log(e.innerText)
+            display.value = bag2;
+         }
+        })
+    })
+
+    //add event on All Clear button
+    ac.addEventListener("click",function(){
+        display.value = "";
+        bag1 = "";
+        bag2 = "";
+        bag3 = "";
+    })
+    
+
+    //add event on equal button
+    let ans = 0;
+    equal.addEventListener("click",function(){
+       
+
+        switch(bag3){
+            case "+" : ans = Number(bag1) + Number(bag2);
+            break;
+            case "-" : ans = Number(bag1) - Number(bag2);
+            break;
+            case "x" : ans = Number(bag1) * Number(bag2);
+            break;
+            case "/" : ans = Number(bag1) / Number(bag2);
+            break;
+        }
+        display.value = ans;
+        bag1 = "";
+        bag2 = "";
+        bag3 = "";
+        is = true;
+    })
+</script>
