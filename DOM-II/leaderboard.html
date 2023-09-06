@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #cont{
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin: auto;
+        }
+        .min{
+            height: 100px;
+            width: 100px;
+            background-color: coral;
+            text-align: center;
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1.8rem;
+
+        }
+        .max{
+            height: 100px;
+            width: 100px;
+            background-color: cadetblue;
+            text-align: center;
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        .score{
+            height: 100px;
+            width: 100px;
+            background-color: grey;
+            position: relative;
+            top: 30px;
+            text-align: center;
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        #button{
+            display: grid;
+            grid-template-rows: repeat(4,50px);
+            grid-template-columns: repeat(3,50px);
+            width: 40%;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+            padding-left: 180px;
+        }
+        #enter{
+            margin-left: 500px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <div class="min">45</div>
+        <div class="score"></div>
+        <div class="max">100</div>
+    </div>
+    <div id="button">
+        <button>0</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        
+    </div>
+    <button id="enter">Enter</button>
+</body>
+</html>
+<script>
+    let min = document.querySelector(".min");
+    let max = document.querySelector(".max");
+    let score = document.querySelector(".score");
+    let button = document.querySelectorAll("#button > button");
+    
+    //add event listener on buttons
+             
+    for(let i = 0; i < button.length; i++){
+        button[i].addEventListener("click",function(){
+            score.innerText += button[i].innerText;
+        })
+    }
+    //add eventlistner on Enter button
+    //let enter = document.querySelector("#enter");
+    enter.addEventListener("click",function(){
+        if(Number(score.innerText) < Number(min.innerText))
+        {
+            if(score.innerHTML != ""){
+            min.innerText = score.innerText;
+            }
+        }
+        else if(Number(score.innerText) > Number(max.innerText)){
+            max.innerText = score.innerText;
+        }
+        score.innerText = "";
+    })
+</script>
