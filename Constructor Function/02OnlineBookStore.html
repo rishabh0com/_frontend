@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore</title>
+</head>
+<body>
+    <h1>Online Book Store : Assignment</h1>
+</body>
+</html>
+<script>
+//constructor function : Author
+function Author(name,birthYear,nationality){
+    this.name = name;
+    this.birthYear = birthYear;
+    this.nationality = nationality;
+}
+
+//constructor function : Book
+function Book(author,title,genre,price){
+    this.title = title;
+    this.genre = genre;
+    this.price = price;
+    this.author = author;
+    this.getBookInfo = function() {
+        console.log("Book'title : " + this.title);
+        console.log("Author's name : " + this.author.name);
+        console.log("Genre : " + this.genre);
+        console.log("Price : " + this.price);
+    }
+}
+
+
+let Author1 = new Author("Ram",1990,"Nepali");
+let Book1 = new Book(Author1,"Climet Change","Envoirment",510);
+//Object.setPrototypeOf(Book1,Author1);
+Book1.getBookInfo();
+
+//let Author1 = new Author("Ram",1990,"Nepali");
+//let Book1 = new Book("Climet Change","Envoirment",510);
+//Book1.getBookInfo.call(Book1);
+
+
+
+console.log(Book1)
+
+
+</script>
+
+
+
+
+
