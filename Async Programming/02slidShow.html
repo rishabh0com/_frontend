@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlidShow</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 1000;
+            font-size: x-large;
+            
+        }
+        body{
+            background-color: antiquewhite;
+        }
+        #images{
+            border: 0px solid red;
+            width: 50%;
+            margin: auto;
+            margin-left: 28%;
+            height: 400px;
+        }
+        #buttons{
+            border: 0px solid forestgreen;
+            width: 50%;
+            margin: auto;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .big{
+            height: 40px;
+            width: 90px;
+        }
+        img{
+            margin: auto;
+            width: 90%;
+            border-radius: 30px;
+        }
+        #toggle{
+            width: 160px;
+        }
+    </style>
+</head>
+<body>
+    <div id="images">
+        <img src="" alt="">
+    </div>
+    <div id="buttons">
+        <button id="previous" class="big"> < </button>
+        <button id="toggle" class="big">Start/Stop</button>
+        <button id="next" class="big"> > </button>
+    </div>
+</body>
+</html>
+<script>
+
+    let bag  = 0;
+    let imgArr = ["https://media.istockphoto.com/id/1390321178/photo/boy-having-fun-on-slide-at-playground.jpg?b=1&s=612x612&w=0&k=20&c=zSFEyoKuMsdKdN3UPf3Yf3zatGOPg9YN8_BMKvKWKR8=",
+    "https://media.istockphoto.com/id/1411857136/photo/wide-automatic-sliding-gate-with-remote-control-installed-in-high-stone-fense-wall-security.jpg?b=1&s=612x612&w=0&k=20&c=TJQ29YfEcD8OfBIJOIpSSBfDf9iWdXBclr8cquL9RP0=",
+    "https://media.istockphoto.com/id/1323051381/photo/cute-child-girl-playing-in-park-stock-photo.jpg?b=1&s=612x612&w=0&k=20&c=UKngeoA7BvybbVVm_uJNVLug6FIn7AXttthSbYcRJAc=",
+    "https://media.istockphoto.com/id/1221220810/photo/kids-in-playground-stock-photo.jpg?b=1&s=612x612&w=0&k=20&c=RKp2yki4CbFNJprQCjUoKVP8WsHGnCQu3HhsiTScG-U=",
+    "https://media.istockphoto.com/id/1071492132/photo/automatic-sliding-gate-and-house.jpg?b=1&s=612x612&w=0&k=20&c=sySAV806bHdEiHf2lSNIQjB_hjMM02X8pKiglPzZyPA=",
+    "https://media.istockphoto.com/id/637617686/photo/glazed-balcony.jpg?b=1&s=612x612&w=0&k=20&c=CNGgRK2zG7OT3EYavyhCHNVqJEg3r0qeQy1QkQDI_d4=",
+    "https://media.istockphoto.com/id/1390117183/photo/mother-with-son-having-fun-on-slide-at-playground.jpg?b=1&s=612x612&w=0&k=20&c=iAebtbMsObykre_j8ud8qgkH9ePCe1MJKky8FJE2GPs=",
+    "https://media.istockphoto.com/id/1224921939/photo/solution-for-placing-kitchen-utensils-in-modern-kitchen-horizontal-sliding-pullout-drawer.jpg?b=1&s=612x612&w=0&k=20&c=1txmzrcw3NgxqFA4C2T4Dz6nk5VWnjtk0AP330-fU_Y=",
+    "https://media.istockphoto.com/id/488719968/photo/master-bedroom-art-deco-style.jpg?b=1&s=612x612&w=0&k=20&c=XZyD-0QziDb61MoYW3QBN58f1_hEURJY84eP9SoX00w=",
+    "https://media.istockphoto.com/id/1323047580/photo/cute-child-girl-playing-in-park-stock-photo.jpg?b=1&s=612x612&w=0&k=20&c=1tGJYN3HKaols_HbAykqdsmLCtcKhtAaHAvhun6C634=",
+    "https://media.istockphoto.com/id/1162253924/photo/blank-sliding-drawer-box-for-branding-presentation-3d-render-illustration.jpg?b=1&s=612x612&w=0&k=20&c=Ar4TH8kl4AGwUiFwimG-iGCO7PN9JfqAxAccmfJoWos="
+    ];
+
+    //displaying the array image
+    let displayImg = document.querySelector("img");
+    display(bag);
+    function display(value){
+        displayImg.setAttribute("src",imgArr[value])
+    }
+    
+    //setinterval
+    let toggle = document.querySelector("#toggle");
+    let timer;
+    let start = true;
+    toggle.addEventListener("click",()=>{
+        if(start){
+            timer = setInterval(()=>{
+                bag ++;
+                display(bag % imgArr.length)
+            },1000)
+            start = false;
+        }
+        else{
+            clearInterval(timer);
+            start = true;
+        }
+    })
+
+
+
+    //next button
+    let next = document.querySelector("#next");
+    next.addEventListener('click',()=>{
+        clearInterval(timer);
+        start = true;
+        setTimeout(()=>{
+            bag ++;
+            display(bag % imgArr.length);
+        },1)
+    })
+
+    //previous button 
+    let pre = document.querySelector("#previous");
+    pre.addEventListener('click',()=>{
+        clearInterval(timer);
+        start = true;
+        setTimeout(()=>{
+            --bag;
+            display(bag % imgArr.length);
+            if(bag < 0){
+                bag = imgArr.length-1;
+            }
+        },1)
+    })
+
+</script>
