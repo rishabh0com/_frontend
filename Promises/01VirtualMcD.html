@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #containerDiv{
+            width: 50%;
+            margin: auto;
+            border: 0px solid green;
+           
+        }
+        #flex{
+           
+            border: 0px dashed darkcyan;
+        }
+        #checkbox{
+            display: flex;
+            border: 0px solid red;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        }
+        .food-item{
+            margin:20px;
+            border: 0px solid gold;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+        .image{
+            border: 0px solid blueviolet;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            margin-right: 20px;
+        }
+        .image > img{
+            max-width: 100%;
+            height: 100px;
+            width: 150px;
+        }
+        #order{
+            padding: 10px;
+
+        }
+        #order>button{
+            width: 100%;
+            height: 40px;
+        }
+        #display{
+            border: 0px dashed navy;
+        }
+        .rs{
+            margin-left: 10px;
+            display: block;
+        }
+        #foodDetail{
+            display: flex;
+        }
+        #h1{
+            display: none;
+            text-align: center;
+        }
+        #wait{
+            text-align: center;
+            display: none;
+            color: blueviolet;
+        }
+        h1{
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="containerDiv">
+        <h1> ||  Aapka Apna Virtual Restrurent  ||</h1>
+            <div id="checkbox">
+                <div class="food-item">
+                    <input type="checkbox" id="click1">
+                    <label for="click1">Burger </label>
+                    <span class="rs">Rs. 499\-</span>
+                    <div class="image"> 
+                        <img src="https://images.pexels.com/photos/918581/pexels-photo-918581.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Burger image">
+                    </div>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="click2">
+                    <label for="click2">Pizza </label>
+                    <span class="rs">Rs. 369\-</span>
+                    <div class="image">
+                        <img src="https://images.pexels.com/photos/11111603/pexels-photo-11111603.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="pizza image">
+                    </div>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" name="" id="click3">
+                    <label for="click3">French Fries</label>
+                    <span class="rs">Rs. 299\-</span>
+                    <div class="image">
+                        <img src="https://images.pexels.com/photos/4109234/pexels-photo-4109234.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="fris image">
+                    </div>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" name="" id="click4">
+                    <label for="click4">Ice-cream </label>
+                    <span class="rs">Rs. 199\-</span>
+                    <div class="image">
+                        <img src="https://images.pexels.com/photos/6025810/pexels-photo-6025810.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="ice cream">
+                    </div>
+                </div>
+            </div>
+        
+        <div id="order">
+            <button id="btn">Order Food</button>
+        </div>
+        <h1 id="wait">waiting......</h1>
+        <h1 id="h1">Ordered Food</h1>
+        <div id="display">
+            
+            </div>
+            <div id="orderid">
+                <h3> <span id="Oid">987654321</span></h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+//catch the element : 
+let foodImages = document.querySelectorAll("img"); // all food images
+let foodName = document.querySelectorAll("label"); // all food names
+let foodPrize = document.querySelectorAll(".rs"); // all food prizes
+let inputArray = document.querySelectorAll("input");
+let h = document.getElementById("h1");
+let wait = document.getElementById("wait")
+let oid = document.getElementById("Oid")
+oid.style.display='none'
+
+let random = Math.floor(Math.random() * (99999999 - 11111111 + 1) + 11111111)
+oid.innerText = "Order ID : "+ random;
+
+let ransomsec = Math.floor(Math.random() * (8 - 2 + 1) + 2) * 1000
+console.log("waiting period",ransomsec,"mili seconds")
+
+
+let displayOrderDetail = document.querySelector("#display"); // display detail
+
+//
+document.getElementById("btn").addEventListener("click",Fun);
+let template = "";
+
+    // take input index for display
+    let bag;
+    let bug,pi,fr,Ic = false;
+    inputArray.forEach((ele,index)=>{
+    ele.addEventListener("click",()=>{
+       bag = index
+       //if(index == 0) bug = !bug
+       //else if(index == 1) pi = !pi
+       //else if(index == 2) fr = !fr
+       //else if(index == 3) Ic = !Ic
+
+       
+       template += `<div> 
+       <div id="foodDetail">
+        <div class="image">
+          <img src="${foodImages[bag].src}" alt="">
+        </div>
+        <div id="displayFoodDetail">
+            <h3>${foodName[bag].innerText}</h3>
+            <h3>${foodPrize[bag].innerText}</h3>
+        </div>
+    </div>
+     `
+       
+    })
+})
+
+function displayFun(){
+    new Promise((resolve,reject)=>{
+        resolve("promise : fulfil")
+    })
+    .then(res=>{
+        wait.style.display='none'
+        h.style.display='block'
+        oid.style.display='block'
+        displayOrderDetail.innerHTML = template;
+        console.log(res)
+    })
+    .catch(error=>{
+        console.log(error)
+    })
+         
+         
+         
+         
+
+}
+function Fun(){
+    wait.style.display='block'
+    setTimeout(displayFun,ransomsec)
+}
+
+
+
+
+
+</script>
