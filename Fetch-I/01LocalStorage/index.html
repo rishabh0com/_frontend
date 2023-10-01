@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+    <style>
+        button{
+            margin: 10px;
+        }
+        #container{
+            display: flex;
+            width: 50%;
+            margin: auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #form_{
+            border: 0px solid red;
+            margin: 50px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        input{
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        #fetch{
+            margin: 50px;
+            border: 0px solid red;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        table{
+            max-width: 100%;
+        }
+        th{
+            border: 1px solid black;
+            justify-content: space-between;
+            width: 100px;
+        }
+        td{
+            text-align: center;
+        }
+        #fetchLoc{
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+<div id="form_">
+    <form action="">
+        <label for="">Name</label><br>
+        <input type="text" id="name">
+        <br>
+        <label for="Age">Age</label><br>
+        <input type="number" id="age">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>  
+<div id="fetch">
+    <button id="fetchLoc">Fetch LocalStorage Data</button>
+    <div >
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
+</div> 
+</body>
+</html>
+<script src="logic.js"></script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display data</title>
+    <style>
+        #root{
+            width: 50%;
+            margin: auto;
+            border: 0px solid blueviolet;
+        }
+        #btn{
+            height: 40px;
+            width: 110px;
+            margin: 40px;
+            font-weight:900;
+            background-color: rgb(13, 138, 222);
+            border: 2px solid rgb(183, 214, 27);
+        }
+        .flex{
+            display: flex;
+            border: 0px solid rgb(47, 101, 26);
+        }
+        img{
+            border-radius: 70px;
+            margin-right: 20px;
+        }
+        h1{
+            margin: auto;
+            margin-right: 20px;
+        }
+        #display{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <button id="btn">Fetch User</button>
+        <div id="display">
+        
+        </div>
+    </div>
+    
+
+    <script src="logic.js"></script>
+</body>
+</html>
