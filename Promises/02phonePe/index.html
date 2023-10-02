@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone pe UI</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+
+<div id="container">
+
+    
+    <nav>
+        <div id="leftnav">
+            <div id="proPhoto">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+            </div>
+            <div id="user">
+                <p>user</p>
+            </div>
+
+        </div>
+        <div id="lasticon">
+            <div class="icon">
+                <i class="fa-solid fa-qrcode"></i>
+            </div>
+            <div class="icon">
+                <i class="fa-regular fa-bell"></i>
+            </div>
+            <div class="icon">
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+            
+        </div>
+    </nav>
+    <div id="banner">
+        <img id="banimg" src="https://www.phonepe.com/blog_images/2017/march/25/take_control_pp/01_take_control_pp_banner.png" alt="">
+    </div>
+    <div id="money">
+        <h3>Money Transfer : This Buttons are working..</h3>
+    <div id="moneytrans">
+        <div id="sendMoneyToContact" class="transIcon">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+        <div id="sendMoneyToBank" class="transIcon">
+            <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div id="sendMoneyToSelf" class="transIcon">
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div id="CheckBalance" class="transIcon">
+            <i class="fa-solid fa-magnifying-glass-dollar"></i>
+        </div>
+    </div>
+    <div id="iconName">
+        <div class="nameIcon">To Contact</div>
+        <div class="nameIcon">To Account</div>
+        <div class="nameIcon">To self</div>
+        <div class="nameIcon">Bank Balance</div>
+    </div>
+    </div>
+    <div class="popupforMessage" id="MessageWait">
+        <h1 style="margin-top: 40px;">Waiting...</h1>
+    </div>
+
+    <div class="popupforMessage" id="MessageforContact">
+        <h1>Send Money to Contact </h1>
+        <h1>Number : <span id="contactNo">9026128712</span></h1>
+        <h1>Amount : ₹<span id="sendAmountToContact"></span></h1>
+    </div>
+    <div class="popupforMessage" id="MessageforBank">
+        <h1>Send Money to Bank </h1>
+        <h1>Account No : <span id="accNo">2686946</span></h1>
+        <h1>Amount : <span id="sendAmountToBank"></span></h1>
+    </div>
+    <div class="popupforMessage" id="MessageforSelf">
+        <h1>Deposit Money To Wallet</h1>
+        <h1>Amount : <span id="sendAmountToSelf"></span></h1>
+    </div>
+    <div class="popupforMessage" id="MessageforBalance">
+        <h1> Bank Balance </h1>
+        <h1>Amount : <span id="BankAmount"></span></h1>
+    </div>
+    
+    
+    <div class="popup" id="popupForContact">
+        <div><input id="ContactNumber" type="number" placeholder="Enter Mobile Number"></div>
+        <div><input id="contactAmount" type="number" name="" id="" placeholder="Enter Amount"></div>
+       <div><button onclick="doForContact()">Send</button></div>
+    </div>
+
+    <div class="popup" id="popupForBank">
+        <div><input id="accNumber" type="number" placeholder="Enter Account Number"></div>
+        <div><input id="accAmount" type="number" name="" id="" placeholder="Enter Amount"></div>
+       <div><button onclick="doForBank()">Send</button></div>
+    </div>
+
+    <div class="popup" id="popupForSelf">
+        <div><input type="number" name="" id="selfAmount" placeholder="Enter Amount"></div>
+        <div><button onclick="doForSelf()">Deposit</button></div>
+    </div>
+
+    <div class="popup" id="popupForBalance">
+        <div><button onclick="doForBalance()">CheckBalance</button></div>
+    </div>
+
+    <div class="pay">
+        <div class="paybill">
+            <div class="paybillIcon">
+                <i class="fa-solid fa-mobile-screen"></i>
+                
+            </div>
+            
+            <div class="paybillIcon">
+                <i class="fa-solid fa-satellite-dish"></i>
+            </div>
+            <div class="paybillIcon">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="paybillIcon">
+                <i class="fa-regular fa-credit-card"></i>
+            </div>
+        </div>
+        <div class="paybill">
+            <div class="paybillIcon">
+                <i class="fa-solid fa-mobile-button"></i>
+            </div>
+            <div class="paybillIcon">
+                <i class="fa-solid fa-tty"></i>
+            </div>
+            <div class="paybillIcon">
+                <i class="fa-solid fa-tower-broadcast"></i>
+            </div>
+            <div class="paybillIcon">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+        </div>
+        <div class="paybill">
+            <div class="paybillIcon">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div class="paybillIcon">
+                <i class="fa-brands fa-usb"></i>
+            </div>
+            <div class="paybillIcon">
+                <i class="fa-solid fa-house-crack"></i>
+            </div>
+            <div class="paybillIcon">
+                <i class="fa-solid fa-circle-dollar-to-slot"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+</body>
+</html>
+<script src="./logic.js"></script>
