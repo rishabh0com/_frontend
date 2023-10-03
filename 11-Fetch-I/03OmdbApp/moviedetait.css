@@ -1,9 +1,9 @@
 #displaymovieDetail{
     border: 0px solid red;
-    height: 70%;
+    height: 90%;
     width: 55%;
     position: fixed;
-    top: 15%;
+    top: 5%;
     right: 23.5%;
     display: flex;
     border-radius: 20px;
@@ -22,7 +22,7 @@
     margin-left: -40px;
     color: white;
     margin-top: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 .flex{
   color: wheat;
