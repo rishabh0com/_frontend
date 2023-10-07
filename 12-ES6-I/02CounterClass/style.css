@@ -1,0 +1,33 @@
+#container{
+    background-color: darkslategrey;
+    width: 40%;
+    margin: auto;
+    margin-top: 90px;
+    padding: 20px;
+    box-shadow: rgba(190, 25, 130, 0.4) 0px 5px, rgba(46, 182, 240, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+#count{
+    text-align: center;
+    color: white;
+    font-weight:bolder;
+    margin: 10px;
+    font-size: 100px;
+}
+#btn{
+    margin: 10px;
+    text-align: center;
+}
+#btn>button:nth-child(2){
+    border-radius: 10px;
+    border: 0px;
+    height: 50px;
+    margin: 20px;
+}
+#btn>button:nth-child(1){
+    border: 0px;
+    border-top-right-radius:10px ;
+}
+#btn>button:nth-child(3){
+    border: 0px;
+    border-top-left-radius:10px ;
+}
