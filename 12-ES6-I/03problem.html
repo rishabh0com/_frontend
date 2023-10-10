@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem using Arrow function</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sample Input ["MA", "SA", "I", "SCH", "OOL"]</h2>
+    <h2>Sample Output ["ma", "sa", "i", "sch", "ool"]</h2>
+</body>
+</html>
+<script>
+let input = ["MA","SA","I","SCH","OOL"];
+let lower = "abcdefghijklmnopqrstuvwxyz";
+let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+//using Arrow function 
+let caseChange = (query) => {
+    let string = "";
+    let lower = "abcdefghijklmnopqrstuvwxyz";
+    let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    
+    for(let i = 0; i < query.length; i++){
+        for(let j = 0; j < upper.length; j++){
+            if(query[i] == upper[j]){
+                string += lower[j];
+            }
+        }
+    }
+    return string;
+}
+
+let output = [];
+
+output = input.map(ele =>{
+    return caseChange(ele);
+})
+console.log(output);
+
+</script>
