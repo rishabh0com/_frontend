@@ -1,0 +1,60 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+nav{
+    border: 2px solid red;
+    height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+}
+#body{
+    box-sizing: border-box;
+    
+}
+#container{
+    border: 4px solid black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    width: 100%;
+}
+#display{
+    border: 2px solid black;
+    width: 360px;
+}
+#id-title{
+    border: 1px dashed gold;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+}
+#id{
+    border: 1px dashed red;
+    font-size: 30px;
+    font-weight: 900;
+}
+#title{
+    border: 1px solid tan;
+    font-size: 30px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+   
+}
+#image{
+    border: 2px solid green;
+    max-width: 100%;
+}
+img{
+    max-width: 100%;
+    width: 300px;
+    height: 300px;
+}
+.price-rating{
+    border: 2px solid blue;
+    padding: 5px;
+}
+p{
+    margin: 0px;
+}
