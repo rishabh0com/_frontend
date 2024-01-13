@@ -1,11 +1,13 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: rgb(58, 58, 58);
 }
-nav{
+
+nav {
     height: 100px;
     border: 0px solid black;
     display: flex;
@@ -14,22 +16,24 @@ nav{
     margin-bottom: 20px;
     background-color: burlywood;
 }
-#logo{
+
+#logo {
     font-size: 70px;
-    font-weight:bolder;
+    font-weight: bolder;
     width: 50%;
     border: 0px solid red;
     text-align: center;
 }
 
-#search{
+#search {
     display: flex;
     border: 0px solid green;
     width: 50%;
     justify-content: space-around;
     align-items: center;
 }
-#searchbar>input{
+
+#searchbar>input {
     height: 50px;
     width: 400px;
     border-radius: 50px;
@@ -37,9 +41,10 @@ nav{
     font-size: large;
     color: rgb(217, 33, 33);
     border: 4px dashed dodgerblue;
-       
+
 }
-#searchbtn>button{
+
+#searchbtn>button {
     width: 200px;
     height: 50px;
     border-radius: 50px;
@@ -48,44 +53,48 @@ nav{
     border: 4px dashed white;
     color: wheat;
 }
-#displayDataOnGrid{
+
+#displayDataOnGrid {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
-.displaydata{
+
+.displaydata {
     border: 0px solid red;
     text-align: center;
     padding: auto;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    background-color:black;
-   
-}
-.displaydata>div{
-    border: 0px solid khaki;
-   margin: 5px;
-   font-size: larger;
-   color: white;
-   font-weight: bolder;
-   width: 444px;
+    background-color: black;
 
 }
-img{
+
+.displaydata>div {
+    border: 0px solid khaki;
+    margin: 5px;
+    font-size: larger;
+    color: white;
+    font-weight: bolder;
+    width: 444px;
+
+}
+
+img {
     width: 444px;
     height: 545px;
 }
-#heading{
+
+#heading {
     position: fixed;
     top: 50%;
     font-weight: 1000;
     font-size: 100px;
 }
-h1{
+
+h1 {
     font-weight: normal;
     font-size: 50px;
     text-align: center;
     color: wheat;
     margin: 0px;
 }
-
-
