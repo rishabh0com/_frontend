@@ -1,0 +1,45 @@
+#displaymovieDetail {
+    border: 0px solid red;
+    height: 90%;
+    width: 55%;
+    position: fixed;
+    top: 5%;
+    right: 23.5%;
+    display: flex;
+    border-radius: 20px;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#moviePoster>img {
+    height: 100%;
+    position: relative;
+    left: -18.5%;
+    border-radius: 20px;
+}
+
+.parameter {
+    font-size: 140%;
+    font-weight: bolder;
+    margin-left: -40px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.flex {
+    color: wheat;
+    font-weight: normal;
+}
+
+#displaymovieDetail>button {
+    height: 7%;
+    width: 7%;
+    position: relative;
+    right: -93%;
+    border-radius: 150%;
+    font-size: x-large;
+    font-weight: 900;
+    background-color: white;
+    border: 0px;
+}

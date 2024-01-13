@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Automobile Inheritance model</h1>
+</body>
+</html>
+<script>
+    //basic automobile 
+    function Auto(model,plateform,engine){
+        this.model = model;
+        this.plateform = plateform;
+        this.engine = engine
+    }
+
+    Auto.prototype.start = function(){
+        console.log(`${this.engine} engine has started`);
+    }
+
+    Auto.prototype.detail = function(){
+        console.log(`${this.model} is made on ${this.plateform}`);
+    }
+
+    let Tata = new Auto("Safari","A23","2.3 Turbo petrol");
+    // creat car function from Auto function
+
+    function Car(brand,model,fuletype,plateform,engine){
+        Auto.apply(this,[model,plateform,engine])
+        Object.setPrototypeOf(Car.prototype,Auto.prototype);
+        this.brand = brand;
+        this.fuletype = fuletype;
+    }
+
+    let c1 = new Car("tata","Punch","petrol","A45","1.2L");
+    console.log(c1)
+    c1.start()
+
+    //Object.creat
+    let c2 = Object.create(Car.prototype)
+    c2.brand ="mahindra"
+    c2.engine ="2.3L"
+    c2.start()
+    console.log(c2)
+   
+   
+    
+</script>

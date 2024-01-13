@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: monospace;
+           
+        }
+        #container{
+            display: flex;
+        }
+        body{
+            background-color: #edede9;
+        }
+        #timer{
+            border-radius: 10px;
+            margin: auto;
+            padding: 0px;
+            border: 0px solid red;
+            display: flex;
+            font-size: 100px;
+            justify-content: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin-top: 50px;
+            color: #081c15;
+            background-color: #e6e8e6;
+        }
+        h1{
+            margin: 0px;
+        }
+        #button{
+            display: flex;
+            justify-content: space-around;
+            border: 0px solid gray;
+            width: 40%;
+            margin: auto;
+            margin-top:50px ;
+            border-radius: 70px;
+        }
+        #button > button{
+            width:150px;
+            height: 50px;
+            border-radius: 60px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: x-large;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            border: 0px;
+            background-color: #bbd0ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="timer">00:00:00</h1>
+    </div>
+    <div id="button">
+        <button id="start">Start/Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+</body>
+</html>
+<script>
+    let watch_ = document.getElementById("timer");
+    const startBtn = document.getElementById("start");
+    const reset = document.getElementById("reset");
+
+    //timer function
+    let sec = 0;
+    let min = 0;
+    let hour = 0;
+    let timer;
+    function startwatch(){
+        timer = setInterval(()=>{
+            sec += 1;
+            if(sec == 60){
+                min += 1;
+                sec = 0;
+                if(min == 60){
+                    hour += 1;
+                    if(hour == 60){
+                        clearInterval(timer);
+                    }
+                }
+            }
+            watch_.innerHTML = hour + ":" + min + ":" + sec;
+        },1000)
+          
+    }
+    //start stop toggel
+    let is = true;
+    startBtn.addEventListener("click",()=>{
+        if(is == true){
+            startwatch();
+            is = false;
+        }
+        else{
+            clearInterval(timer)
+            is = true;
+        }
+    })
+    //stop watch
+    function stopWatch(){
+
+    }
+    //reset watch
+    reset.addEventListener("click",()=>{
+        
+        sec = 0;
+        min = 0;
+        hour = 0;
+        clearInterval(timer);
+        watch_.innerHTML = "00"+":"+"00"+":"+"00";
+        is = true;
+    })
+</script>

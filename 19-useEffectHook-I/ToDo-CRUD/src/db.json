@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "title": "Go GYM",
+      "status": true,
+      "id": 1
+    },
+    {
+      "title": "Cook food",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "kjhksdf",
+      "status": false,
+      "id": 3
+    }
+  ]
+}

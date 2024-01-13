@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Game</title>
+</head>
+<body>
+    <h1>Prototypal Inheritance - 01 simulation Game</h1>
+</body>
+</html>
+<script>
+    function Vehicle(brand,model,speed,fuleType){
+        this.brand = brand;
+        this.model = model;
+        this.speed = speed;
+        this.fuleType = fuleType;
+    }
+    //create prototype for Vehicle function :
+    Vehicle.prototype.accelerate = function(){
+        console.log(`This vehicle accelerate in ${this.speed} km/ph speed.`)
+    }
+
+    Vehicle.prototype.brake = function(){
+        console.log(`${this.model} is braking.`)
+    }
+
+    Vehicle.prototype.refule = function(){
+       console.log(`${this.model} is refuling.`)
+    }
+    let v1 = new Vehicle("Mahindra","Thar",120,"Desile");
+    console.log(v1);
+    v1.accelerate(); 
+    v1.brake();
+    v1.refule();
+    
+
+    //create CAR constructor function
+    function Car(brand,model,speed,fuleType,numberOfWheel){
+        Vehicle.call(this,brand,model,speed,fuleType);       //sending the empty obj to the vehicle function and inherit the prop
+
+        this.numberOfWheel = numberOfWheel;
+    }
+    Car.prototype.honk = function(){
+        console.log(`${this.model} is horning`);
+    }
+    //inherit proptotypes from Vehicle to Car :
+    Object.setPrototypeOf(Car.prototype,Vehicle.prototype)
+
+    let c1 = new Car("tata","Punch",90,"petrole",4);
+    console.log(c1)
+    c1.accelerate()
+    c1.brake()
+    c1.refule()
+    c1.honk()
+
+    //create AIRPLANE constructor function 
+    function Airplane(brand,model,speed,fuleType,noOfEngine,hasLandingGear){
+        
+        //inherit propeties from vehicle to airplane
+        Vehicle.apply(this,[brand,model,speed,fuleType]);
+ 
+        //inherit prototypes from vehicle to airplane
+        Object.setPrototypeOf(Airplane.prototype,Vehicle.prototype);
+
+        this.noOfEngine = noOfEngine;
+        this.hasLandingGear = hasLandingGear;
+    }
+    Airplane.prototype.takeOff = function(){
+        console.log(`${this.model} is taking off`);
+    }
+
+    a1 = new Airplane("Airbus","A380",1200,"Jetfule",2,true);
+    
+    console.log(a1);
+    a1.refule()
+    a1.accelerate()
+    a1.brake()
+    a1.takeOff()
+    
+
+    
+</script>

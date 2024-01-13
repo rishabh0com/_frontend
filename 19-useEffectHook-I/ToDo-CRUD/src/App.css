@@ -1,0 +1,29 @@
+#root {
+  margin: 0 auto;
+  text-align: start;
+  align-items: self-start;
+}
+
+.task{
+  display: flex;
+  border: 2px solid wheat;
+  justify-content: space-evenly;
+  margin: 10px;
+  padding: 0px;
+  border-radius: 20px;
+  align-items: center;
+  width: 30em;
+}
+.task:hover{
+  cursor: pointer;
+}
+.heading{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.heading>button{
+  height: 3rem;
+  margin-left: 10px;
+ 
+}
