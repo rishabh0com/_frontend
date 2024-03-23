@@ -1,12 +1,15 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { TodoContext } from "../context/TodoContext";
 
 const Todo = ({ todo }) => {
+    const {setClickEffect} = useContext(TodoContext);
   const apiKey = import.meta.env.VITE_API_KEY;
   console.log("props", todo);
   const { title, status, id } = todo;
 
-  const handleStatus = (status, id) => {
+    const handleStatus = (status, id) => {
+    setClickEffect((prev) => !prev);
     try {
       axios({
         method: "patch",

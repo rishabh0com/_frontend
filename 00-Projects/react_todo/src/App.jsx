@@ -8,7 +8,7 @@ function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
   const [pageCount, setPageCount] = useState(1);
   const [isTodo, setIsTodo] = useState(true);
-  const { todos, setTodos } = useContext(TodoContext);
+  const { todos, setTodos,clickEffect } = useContext(TodoContext);
   const getTodos = async () => {
     try {
       const response = await axios({
@@ -34,7 +34,7 @@ function App() {
     return () => {
       console.log("cleanup");
     };
-  }, [pageCount]);
+  }, [pageCount,clickEffect]);
 
   return (
     <section>

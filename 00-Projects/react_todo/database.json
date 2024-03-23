@@ -8,12 +8,12 @@
     {
       "id": 12,
       "title": "Finish homework",
-      "status": true
+      "status": false
     },
     {
       "id": 13,
       "title": "Go for a run",
-      "status": false
+      "status": true
     },
     {
       "id": 14,
@@ -23,12 +23,12 @@
     {
       "id": 15,
       "title": "Clean the house",
-      "status": true
+      "status": false
     },
     {
       "id": 16,
       "title": "Read a book",
-      "status": false
+      "status": true
     },
     {
       "id": 17,
