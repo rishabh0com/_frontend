@@ -3,12 +3,12 @@ import { useEffect, useContext } from "react";
 import { TodoContext } from "../context/TodoContext";
 
 const Todo = ({ todo }) => {
-    const {setClickEffect} = useContext(TodoContext);
+  const { setClickEffect } = useContext(TodoContext);
   const apiKey = import.meta.env.VITE_API_KEY;
   console.log("props", todo);
   const { title, status, id } = todo;
 
-    const handleStatus = (status, id) => {
+  const handleStatus = (status, id) => {
     setClickEffect((prev) => !prev);
     try {
       axios({
@@ -20,11 +20,22 @@ const Todo = ({ todo }) => {
         },
       });
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
-    };
-    useEffect(() => {
-    }, [handleStatus]);
+  };
+    const handleDelete = (id) => {
+      setClickEffect((prev) => !prev);
+    try {
+      axios({
+        method: "delete",
+        url: `${apiKey}/todos/${id}`,
+        headers: { "Content-Type": "application/json" },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {}, [handleStatus]);
   return (
     <div className="flex items-center justify-between bg-gray-900 p-2 rounded-md mb-2">
       <div className="w-[30%] text-left ">
@@ -46,7 +57,7 @@ const Todo = ({ todo }) => {
         {/* <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md">
           Delete
         </button> */}
-        <span className="text-red-500 text-[1.5rem]">
+        <span className="text-red-500 text-[1.5rem]" onClick={()=>handleDelete(id)}>
           <i class="fa-regular fa-trash-can"></i>
         </span>
       </div>
