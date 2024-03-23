@@ -1,16 +1,6 @@
 {
   "todos": [
     {
-      "id": 11,
-      "title": "Buy groceries",
-      "status": false
-    },
-    {
-      "id": 12,
-      "title": "Finish homework",
-      "status": false
-    },
-    {
       "id": 13,
       "title": "Go for a run",
       "status": true
