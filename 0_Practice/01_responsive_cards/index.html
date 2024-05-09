@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Cards</title>
+    <style>
+      html {
+        font-size: 62.5%;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        gap: 3rem;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 80vw;
+        height: auto;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding: 2rem;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .heading {
+        font-size: 3rem;
+        font-weight: 500;
+        color: #0d0d0d;
+        margin-bottom: 1.5rem;
+      }
+      .item {
+        width: 35rem;
+        min-width: 35rem;
+        box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+      }
+      .content {
+        padding: 3rem;
+      }
+      .text {
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+        line-height: 1.7;
+        color: #3d3d3d;
+        margin-bottom: 2.5rem;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 2rem;
+        text-align: center;
+        color: #3363ff;
+        background-color: #e6ecff;
+        border: none;
+        border-radius: 0.4rem;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+      img {
+        height: 18rem;
+        display: block;
+        width: 100%;
+        object-fit: cover;
+      }
+      @media screen and (max-width: 768px) {
+        .container {
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+        }
+        .item {
+          width: 100%;
+          min-width: 100%;
+        }
+      }
+      @media screen and (min-width: 900px) and (max-width: 1200px){
+        .container {
+          justify-content: start;
+        }
+        .item {
+          width: 30rem;
+          min-width: 30rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="item">
+        <div class="pic">
+          <img
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+            alt="mountains" />
+        </div>
+        <div class="content">
+          <h2 class="heading">A starry night</h2>
+          <p class="text">
+            Look up at the night sky, and find yourself
+            <strong>immersed</strong> in the amazing mountain range of Aspen.
+          </p>
+          <button class="btn">Explore <span>&rarr;</span></button>
+        </div>
+      </section>
+      <section class="item">
+        <div class="pic">
+          <img
+            src="https://images.unsplash.com/photo-1485160497022-3e09382fb310?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+            alt="mountains" />
+        </div>
+        <div class="content">
+          <h2 class="heading">Misty mornings</h2>
+          <p class="text">
+            Capture the stunning <strong>essence</strong> of the early morning
+            sunrise in the Californian wilderness.
+          </p>
+          <button class="btn">Explore <span>&rarr;</span></button>
+        </div>
+      </section>
+      <section class="item">
+        <div class="pic">
+          <img
+            src="https://images.unsplash.com/photo-1506318164473-2dfd3ede3623?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80"
+            alt="mountains" />
+        </div>
+        <div class="content">
+          <h2 class="heading">Utah sunsets</h2>
+          <p class="text">
+            Sunsets over the <strong>stunning</strong> Utah Canyonlands, is
+            truly something much more than incredible.
+          </p>
+          <button class="btn">Explore <span>&rarr;</span></button>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
